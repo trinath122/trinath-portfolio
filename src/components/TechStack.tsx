@@ -22,11 +22,53 @@ const imageUrls = [
   "/images/typescript.webp",
   "/images/javascript.webp",
 ];
-const textures = imageUrls.map((url) => textureLoader.load(url));
+const imageTextures = imageUrls.map((url) => textureLoader.load(url));
 
-const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
+const skills = [
+  "Python",
+  "PyTorch",
+  "LangChain",
+  "LangGraph",
+  "RAG",
+  "LoRA/PEFT",
+  "RLHF",
+  "XGBoost",
+  "Sklearn",
+  "AWS",
+  "GCP",
+  "Azure",
+  "Docker",
+  "K8s",
+  "Kafka",
+  "Spark",
+  "Airflow",
+  "MLflow",
+  "SQL",
+  "FastAPI",
+  "GenAI",
+];
 
-const spheres = [...Array(30)].map(() => ({
+const canvasTextures = skills.map((skill) => {
+  const canvas = document.createElement("canvas");
+  canvas.width = 512;
+  canvas.height = 512;
+  const ctx = canvas.getContext("2d");
+  if (ctx) {
+    ctx.clearRect(0, 0, 512, 512);
+    ctx.fillStyle = "#ffffff";
+    ctx.font = "bold 72px 'Geist', sans-serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(skill, 256, 256);
+  }
+  return new THREE.CanvasTexture(canvas);
+});
+
+const textures = [...imageTextures, ...canvasTextures];
+
+const sphereGeometry = new THREE.SphereGeometry(1, 16, 16);
+
+const spheres = [...Array(25)].map(() => ({
   scale: [0.7, 1, 0.8, 1, 1][Math.floor(Math.random() * 5)],
 }));
 
@@ -128,12 +170,19 @@ const TechStack = () => {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-      const threshold = document
-        .getElementById("work")!
-        .getBoundingClientRect().top;
-      setIsActive(scrollY > threshold);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY || document.documentElement.scrollTop;
+          const threshold = document
+            .getElementById("work")!
+            .getBoundingClientRect().top;
+          setIsActive(scrollY > threshold);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     document.querySelectorAll(".header a").forEach((elem) => {
       const element = elem as HTMLAnchorElement;
@@ -204,7 +253,7 @@ const TechStack = () => {
           environmentRotation={[0, 4, 2]}
         />
         <EffectComposer enableNormalPass={false}>
-          <N8AO color="#0f002c" aoRadius={2} intensity={1.15} />
+          <N8AO color="#0f002c" aoRadius={2} intensity={1.15} distanceFalloff={1} />
         </EffectComposer>
       </Canvas>
     </div>

@@ -5,7 +5,7 @@ const Career = () => {
     <div className="career-section section-container">
       <div className="career-container">
         <h2>
-          My career <span>&</span>
+          My career, <span>education, &</span>
           <br /> experience
         </h2>
         <div className="career-info">
@@ -15,45 +15,54 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Full Stack Developer</h4>
-                <h5>Ikshan</h5>
+                <h4>AI/ML Engineer</h4>
+                <h5>Dexcom</h5>
               </div>
-              <h3>2020</h3>
+              <h3>2024</h3>
             </div>
             <p>
-              Built 6+ complete applications using React.js. Integrated backend
-              authentication using Node.js & MongoDB. Created responsive UI/UX
-              and designed wireframes using Figma.
+              Pioneered production-grade GenAI applications using GPT, Claude, LangChain, and LangGraph — fine-tuning LLMs (SFT, LoRA/PEFT) and architecting RAG systems integrating real-time data streams via Kafka and Spark/PySpark.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Senior Full Stack Developer</h4>
-                <h5>Monocept (Max Life Insurance)</h5>
+                <h4>Data Engineer</h4>
+                <h5>Virtusa</h5>
               </div>
-              <h3>2021</h3>
+              <h3>2022</h3>
             </div>
             <p>
-              Led two development teams on Mpro, a large-scale insurance
-              operations platform. Developed multiple modules using React.js &
-              migrated critical functionalities to Node.js microservices.
+              Designed and deployed production ML solutions for credit-risk modeling and fraud detection using Python, PyTorch, XGBoost, and Scikit-learn. Built robust data pipelines using Spark/PySpark, Airflow, and Kafka.
             </p>
           </div>
+
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Full Stack Developer</h4>
-                <h5>Logic Loop</h5>
+                <h4>Master's in Data Intelligence</h4>
+                <h5>University of South Florida</h5>
               </div>
-              <h3>NOW</h3>
+              <h3>2024</h3>
             </div>
             <p>
-              Building Solid, a proprietary low-code platform using Angular,
-              Next.js & NestJS. Delivering production-ready CMS-based projects
-              including e-commerce, CRM, and import-export automation systems.
+              Focused on advanced coursework in Artificial Intelligence, Machine Learning, Data Structures, and Cloud Computing. Graduated with a strong foundation in scalable algorithms and software architecture.
             </p>
           </div>
+
+          <div className="career-info-box">
+            <div className="career-info-in">
+              <div className="career-role">
+                <h4>Bachelor's in Electronics &amp; Communication</h4>
+                <h5>Institute of Aeronautical Engineering</h5>
+              </div>
+              <h3>2022</h3>
+            </div>
+            <p>
+              Developed a strong foundation in hardware-software integration, signal processing, and foundational programming. Built early machine learning models for embedded systems.
+            </p>
+          </div>
+
         </div>
       </div>
     </div>

@@ -8,9 +8,10 @@
   box-sizing: border-box;
   position: fixed;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 0) translateZ(0);
   top: 0;
   z-index: 9999;
+  backface-visibility: hidden;
 }
 .header ul {
   font-size: 12px;

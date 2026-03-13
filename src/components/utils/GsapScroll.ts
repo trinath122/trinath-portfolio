@@ -14,7 +14,7 @@ export function setCharTimeline(
       trigger: ".landing-section",
       start: "top top",
       end: "bottom top",
-      scrub: true,
+      scrub: 1.5,
       invalidateOnRefresh: true,
     },
   });
@@ -23,7 +23,7 @@ export function setCharTimeline(
       trigger: ".about-section",
       start: "center 55%",
       end: "bottom top",
-      scrub: true,
+      scrub: 1.5,
       invalidateOnRefresh: true,
     },
   });
@@ -32,7 +32,7 @@ export function setCharTimeline(
       trigger: ".whatIDO",
       start: "top top",
       end: "bottom top",
-      scrub: true,
+      scrub: 1.5,
       invalidateOnRefresh: true,
     },
   });
@@ -66,7 +66,7 @@ export function setCharTimeline(
       tl1
         .fromTo(character.rotation, { y: 0 }, { y: 0.7, duration: 1 }, 0)
         .to(camera.position, { z: 22 }, 0)
-        .fromTo(".character-model", { x: 0 }, { x: "-25%", duration: 1 }, 0)
+        .fromTo(".character-model", { x: 0 }, { x: "-18%", duration: 1 }, 0)
         .to(".landing-container", { opacity: 0, duration: 0.4 }, 0)
         .to(".landing-container", { y: "40%", duration: 0.8 }, 0)
         .fromTo(".about-me", { y: "-50%" }, { y: "0%" }, 0);
@@ -138,7 +138,7 @@ export function setAllTimeline() {
       trigger: ".career-section",
       start: "top 30%",
       end: "100% center",
-      scrub: true,
+      scrub: 1.5,
       invalidateOnRefresh: true,
     },
   });

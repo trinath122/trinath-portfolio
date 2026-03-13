@@ -26,6 +26,7 @@
   filter: blur(60px);
   border-radius: 50%;
   animation: loadingCircle 5s linear infinite;
+  will-change: transform;
 }
 
 .nav-fade {
@@ -40,6 +41,7 @@
   z-index: 12;
   opacity: 0;
   left: 0;
+  will-change: opacity;
 }
 
 @keyframes loadingCircle {
@@ -66,6 +68,7 @@
   filter: blur(50px);
   border-radius: 50%;
   animation: loadingCircle2 5s linear infinite;
+  will-change: transform;
 }
 
 @keyframes loadingCircle2 {
@@ -91,17 +94,14 @@
 
 .character-rim {
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: clamp(250px, 30vw, 400px);
+  height: clamp(250px, 30vw, 400px);
   z-index: 1;
-  background-color: #22d3ee;
-  transform: translate(-50%, 36%) scaleX(1.4);
-  box-shadow: inset 66px 35px 85px 0px rgba(0, 180, 180, 0.65);
-  filter: blur(50px);
+  background: radial-gradient(circle, rgba(34,211,238,0.45) 0%, rgba(34,211,238,0.15) 50%, transparent 75%);
   border-radius: 50%;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, 100%) scale(1.4);
+  transform: translate(-50%, 100%) scale(1.4) translateZ(0);
   opacity: 0;
 }
 
@@ -117,6 +117,7 @@
   z-index: 0;
   bottom: 50px;
   pointer-events: inherit;
+  will-change: transform;
 }
 
 .character-model::after {
@@ -173,6 +174,7 @@
   z-index: 9;
   top: 12%;
   left: 0;
+  will-change: transform, opacity;
 }
 
 .landing-intro h2 {
@@ -203,6 +205,7 @@
   bottom: 40px;
   top: inherit;
   z-index: 9;
+  will-change: transform, opacity;
 }
 
 .landing-info h3 {

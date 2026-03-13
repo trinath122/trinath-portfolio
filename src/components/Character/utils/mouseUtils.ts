@@ -1,5 +1,8 @@
 import * as THREE from "three";
 
+let cachedScrollY = 0;
+window.addEventListener("scroll", () => { cachedScrollY = window.scrollY; }, { passive: true });
+
 export const handleMouseMove = (
   event: MouseEvent,
   setMousePosition: (x: number, y: number) => void
@@ -43,7 +46,7 @@ export const handleHeadRotation = (
   lerp: (x: number, y: number, t: number) => number
 ) => {
   if (!headBone) return;
-  if (window.scrollY < 200) {
+  if (cachedScrollY < 200) {
     const maxRotation = Math.PI / 6;
     headBone.rotation.y = lerp(
       headBone.rotation.y,
