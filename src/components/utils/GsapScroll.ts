@@ -30,7 +30,7 @@ export function setCharTimeline(
   const tl3 = gsap.timeline({
     scrollTrigger: {
       trigger: ".whatIDO",
-      start: "top 30%",
+      start: "top top",
       end: "bottom top",
       scrub: 1.5,
       invalidateOnRefresh: true,
@@ -112,11 +112,11 @@ export function setCharTimeline(
         .fromTo(
           ".character-model",
           { y: "0%" },
-          { y: "-100%", duration: 4, ease: "none" },
+          { y: "-100%", duration: 4, ease: "none", delay: 1 },
           0
         )
         .fromTo(".whatIDO", { y: 0 }, { y: "15%", duration: 2 }, 0)
-        .to(character.rotation, { x: -0.04, duration: 2 }, 0);
+        .to(character.rotation, { x: -0.04, duration: 2, delay: 1 }, 0);
     }
   } else {
     if (character) {
